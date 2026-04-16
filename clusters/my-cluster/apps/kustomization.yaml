@@ -4,3 +4,9 @@ kind: Kustomization
 resources:
   - deployment.yaml
   - service.yaml
+
+patches:
+  - path: patch-replicas.yaml
+    target:
+      kind: Deployment
+      name: nginx  
